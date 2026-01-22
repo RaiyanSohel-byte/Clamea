@@ -23,8 +23,8 @@ const HowItWorks = ({ lang }) => {
   ];
 
   return (
-    <section className="relative py-24 md:py-32 bg-gradient-to-b from-[#004C92] to-[#1AA9F4] overflow-hidden text-white">
-      {/* Background Texture - Continuing the grid from Features */}
+    <section className="relative py-24 md:py-32 bg-gradient-to-b from-[#004C92] to-[#1AA9F4] text-white overflow-hidden">
+      {/* Background Texture */}
       <div
         className="absolute inset-0 z-0 opacity-10 pointer-events-none"
         style={{
@@ -53,17 +53,15 @@ const HowItWorks = ({ lang }) => {
 
         {/* Steps Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 relative">
-          {/* Connecting Glowing Line (Desktop Only) */}
-          <div className="hidden md:block absolute top-[52px] left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-transparent via-blue-400/40 to-transparent -z-0"></div>
+          {/* Connecting Glowing Line */}
+          <div className="hidden md:block absolute top-[52px] left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-transparent via-white/20 to-transparent -z-0"></div>
 
           {steps.map((step, index) => (
             <div
               key={index}
               className="group relative flex flex-col items-center md:items-start text-center md:text-left"
             >
-              {/* Step Card (Glassmorphism) */}
               <div className="relative z-10 w-full p-8 md:p-10 rounded-[2.5rem] bg-white/5 border border-white/10 backdrop-blur-2xl shadow-2xl transition-all duration-500 hover:bg-white/10 hover:-translate-y-2 group-hover:border-blue-400/30">
-                {/* Visual Glow behind number */}
                 <div className="absolute -top-10 -left-10 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
                 {/* Number Badge */}
@@ -80,13 +78,13 @@ const HowItWorks = ({ lang }) => {
                 </h4>
 
                 <p className="text-blue-100/60 leading-relaxed font-medium">
-                  {t.description || step.description}
+                  {step.description}
                 </p>
               </div>
 
               {/* Mobile Animated Arrow */}
               {index !== steps.length - 1 && (
-                <div className="md:hidden py-6 text-blue-400 animate-bounce">
+                <div className="md:hidden py-6 text-blue-200 animate-bounce">
                   <svg
                     className="w-8 h-8 rotate-90"
                     fill="none"

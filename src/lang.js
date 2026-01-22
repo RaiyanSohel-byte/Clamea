@@ -10,6 +10,9 @@ export const texts = {
 
     // HERO
     hero_badge: "Early Access • Sweden",
+    hero_badge2: "AI-analysis",
+    hero_badge_text1: "Your policy covers",
+    hero_badge_text2: "of rehabilitation costs",
     hero_title_1: "Insurance claims",
     hero_title_2: "made effortless.",
     hero_desc:
@@ -79,6 +82,7 @@ export const texts = {
     how_bottom_text: "Average setup time: Under 5 minutes",
 
     // TRUST & SECURITY
+    trust_title: "Trusted by Design",
     trust_badge: "Security & Compliance",
     trust_gdpr: "GDPR Compliant",
     trust_bankid: "BankID Integrated",
@@ -108,6 +112,10 @@ export const texts = {
 
     // HERO
     hero_badge: "Tidigt tillträde • Sverige",
+    hero_badge2: "AI-analys",
+    hero_badge_text:
+      "Din försäkring täcker 100 % av rehabiliteringskostnaderna",
+    hero_badge_text2: "av rehabiliteringskostnaderna",
     hero_title_1: "Försäkringsärenden",
     hero_title_2: "utan krångel.",
     hero_desc:
@@ -177,6 +185,7 @@ export const texts = {
     how_bottom_text: "Genomsnittlig installationstid: Under 5 minuter",
 
     // TRUST & SECURITY
+    trust_title: "Betrodd av Design",
     trust_badge: "Säkerhet & efterlevnad",
     trust_gdpr: "GDPR-kompatibel",
     trust_bankid: "BankID integrerat",

@@ -107,7 +107,7 @@ const Hero = ({ lang }) => {
                   <img
                     src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop"
                     alt="Platform"
-                    className="w-full h-full object-cover opacity-60 mix-blend-luminosity"
+                    className="w-full h-full object-cover"
                   />
 
                   {/* Floating Status Bar - Scaled for mobile */}
@@ -142,13 +142,13 @@ const Hero = ({ lang }) => {
                     </svg>
                   </div>
                   <p className="text-[8px] md:text-[10px] font-black uppercase text-blue-100 tracking-[0.2em]">
-                    AI Analysis
+                    {t.hero_badge2}
                   </p>
                 </div>
                 <p className="text-xs md:text-sm text-white/90 leading-relaxed font-semibold">
-                  "Your policy covers{" "}
-                  <span className="text-blue-300">100%</span> of rehabilitation
-                  costs."
+                  "{t.hero_badge_text1}{" "}
+                  <span className="text-blue-300">100%</span>{" "}
+                  {t.hero_badge_text2}."
                 </p>
               </div>
             </div>
