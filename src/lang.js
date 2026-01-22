@@ -79,6 +79,7 @@ export const texts = {
     how_bottom_text: "Average setup time: Under 5 minutes",
 
     // TRUST & SECURITY
+    trust_badge: "Security & Compliance",
     trust_gdpr: "GDPR Compliant",
     trust_bankid: "BankID Integrated",
     trust_aes: "AES-256 Encrypted",
@@ -176,6 +177,7 @@ export const texts = {
     how_bottom_text: "Genomsnittlig installationstid: Under 5 minuter",
 
     // TRUST & SECURITY
+    trust_badge: "Säkerhet & efterlevnad",
     trust_gdpr: "GDPR-kompatibel",
     trust_bankid: "BankID integrerat",
     trust_aes: "AES-256 krypterad",

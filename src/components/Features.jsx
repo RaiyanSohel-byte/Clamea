@@ -9,7 +9,6 @@ const Features = ({ lang }) => {
       desc: t.features_1_desc,
       icon: (
         <svg
-          xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6"
           fill="none"
           viewBox="0 0 24 24"
@@ -29,7 +28,6 @@ const Features = ({ lang }) => {
       desc: t.features_2_desc,
       icon: (
         <svg
-          xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6"
           fill="none"
           viewBox="0 0 24 24"
@@ -49,7 +47,6 @@ const Features = ({ lang }) => {
       desc: t.features_3_desc,
       icon: (
         <svg
-          xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6"
           fill="none"
           viewBox="0 0 24 24"
@@ -69,7 +66,6 @@ const Features = ({ lang }) => {
       desc: t.features_4_desc,
       icon: (
         <svg
-          xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6"
           fill="none"
           viewBox="0 0 24 24"
@@ -89,7 +85,6 @@ const Features = ({ lang }) => {
       desc: t.features_5_desc,
       icon: (
         <svg
-          xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6"
           fill="none"
           viewBox="0 0 24 24"
@@ -109,7 +104,6 @@ const Features = ({ lang }) => {
       desc: t.features_6_desc,
       icon: (
         <svg
-          xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6"
           fill="none"
           viewBox="0 0 24 24"
@@ -127,43 +121,71 @@ const Features = ({ lang }) => {
   ];
 
   return (
-    <section className="py-24">
-      <div className="container mx-auto max-w-6xl px-6">
+    <section className="relative py-24 md:py-32 bg-[#004C92] overflow-hidden text-white">
+      {/* Continuing the SVG Grid Texture */}
+      <div
+        className="absolute inset-0 z-0 opacity-10"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54 48L54 60L52 60L52 48L40 48L40 46L52 46L52 34L54 34L54 46L66 46L66 48L54 48Z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+        }}
+      ></div>
+
+      <div className="container mx-auto max-w-7xl px-6 relative z-10">
         {/* Section Header */}
-        <div className="mb-20">
-          <h2 className="text-sm font-bold tracking-[0.2em] text-[#004C92] uppercase mb-4">
-            {t.features_badge}
-          </h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-slate-900">
+        <div className="mb-16 md:mb-24 text-center lg:text-left">
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
+            <span className="text-[10px] font-black tracking-[0.2em] text-blue-200 uppercase">
+              {t.features_badge}
+            </span>
+          </div>
+          <h3 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1]">
             {t.features_title}
           </h3>
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {features.map((f, i) => (
-            <div key={i} className="group">
-              <div className="w-14 h-14 bg-white rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center mb-6 text-[#004C92] group-hover:bg-[#004C92] group-hover:text-white transition-all duration-300">
-                {f.icon}
+            <div
+              key={i}
+              className="group relative p-8 rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-sm transition-all duration-500 hover:bg-white/10 hover:border-blue-400/30 hover:-translate-y-2"
+            >
+              {/* Card Hover Glow */}
+              <div className="absolute -inset-1 bg-gradient-to-br from-blue-400/20 to-transparent rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+              <div className="relative z-10">
+                <div className="w-14 h-14 bg-gradient-to-br from-blue-400 to-[#004C92] rounded-2xl shadow-lg flex items-center justify-center mb-6 text-white transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3">
+                  {f.icon}
+                </div>
+                <h4 className="text-xl md:text-2xl font-bold mb-4 tracking-tight">
+                  {f.title}
+                </h4>
+                <p className="text-blue-100/70 leading-relaxed text-sm md:text-base font-medium">
+                  {f.desc}
+                </p>
               </div>
-              <h4 className="text-xl font-bold text-slate-900 mb-3">
-                {f.title}
-              </h4>
-              <p className="text-slate-600 leading-relaxed text-sm lg:text-base">
-                {f.desc}
-              </p>
             </div>
           ))}
         </div>
 
-        {/* Bottom Banner */}
-        <div className="mt-20 p-8 bg-[#004C92] rounded-3xl flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-white text-lg font-medium">
-            {t.features_cta_text}
-          </p>
-          <button className="btn bg-white hover:bg-slate-100 text-[#004C92] border-none rounded-xl px-8">
-            {t.features_cta_btn}
-          </button>
+        {/* Bottom Banner - Modern Floating Style */}
+        <div className="mt-20 md:mt-32 relative group">
+          <div className="absolute -inset-1 bg-gradient-to-r from-[#1AA9F4] to-[#004C92] rounded-[2.5rem] blur-lg opacity-30"></div>
+
+          <div className="relative p-8 md:p-12 bg-white rounded-[2rem] md:rounded-[2.5rem] flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl overflow-hidden">
+            {/* Background Accent */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full blur-3xl opacity-60"></div>
+
+            <div className="relative z-10 text-center lg:text-left max-w-2xl">
+              <p className="text-2xl md:text-3xl font-black text-[#004C92] leading-tight">
+                {t.features_cta_text}
+              </p>
+            </div>
+
+            <button className="relative z-10 btn w-full lg:w-auto h-[64px] px-10 bg-[#004C92] hover:bg-[#1AA9F4] text-white border-none rounded-2xl text-lg font-bold shadow-xl shadow-blue-900/20 transition-all hover:scale-105 active:scale-95">
+              {t.features_cta_btn}
+            </button>
+          </div>
         </div>
       </div>
     </section>

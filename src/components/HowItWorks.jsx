@@ -23,58 +23,99 @@ const HowItWorks = ({ lang }) => {
   ];
 
   return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto max-w-6xl px-6">
+    <section className="relative py-24 md:py-32 bg-gradient-to-b from-[#004C92] to-[#1AA9F4] overflow-hidden text-white">
+      {/* Background Texture - Continuing the grid from Features */}
+      <div
+        className="absolute inset-0 z-0 opacity-10 pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54 48L54 60L52 60L52 48L40 48L40 46L52 46L52 34L54 34L54 46L66 46L66 48L54 48Z' fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+        }}
+      ></div>
+
+      {/* Deep Sea Glows */}
+      <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-[120px] -z-10"></div>
+
+      <div className="container mx-auto max-w-7xl px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-20">
-          <h2 className="text-sm font-bold tracking-[0.2em] text-[#004C92] uppercase mb-4">
-            {t.how_badge}
-          </h2>
-          <h3 className="text-3xl md:text-5xl font-bold text-slate-900 leading-tight">
+        <div className="text-center max-w-3xl mx-auto mb-20 md:mb-28">
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
+            <span className="text-[10px] font-black tracking-[0.2em] text-blue-200 uppercase">
+              {t.how_badge}
+            </span>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] tracking-tighter">
             {t.how_title_1}{" "}
-            <span className="text-[#004C92] text-3xl md:text-5xl">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-blue-200">
               {t.how_title_2}
             </span>
-          </h3>
+          </h2>
         </div>
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
-          {/* Connecting Line (Desktop Only) */}
-          <div className="hidden md:block absolute top-12 left-0 w-full h-px bg-slate-100 -z-10"></div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 relative">
+          {/* Connecting Glowing Line (Desktop Only) */}
+          <div className="hidden md:block absolute top-[52px] left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-transparent via-blue-400/40 to-transparent -z-0"></div>
 
           {steps.map((step, index) => (
             <div
               key={index}
-              className="flex flex-col items-center md:items-start text-center md:text-left border rounded-2xl p-8 border-gray-200"
+              className="group relative flex flex-col items-center md:items-start text-center md:text-left"
             >
-              {/* Number Circle */}
-              <div className="w-16 h-16 rounded-full bg-white border-2 border-slate-100 flex items-center justify-center mb-8 shadow-sm group-hover:border-[#004C92] transition-colors">
-                <span className="text-[#004C92] font-bold text-xl">
-                  {step.number}
-                </span>
+              {/* Step Card (Glassmorphism) */}
+              <div className="relative z-10 w-full p-8 md:p-10 rounded-[2.5rem] bg-white/5 border border-white/10 backdrop-blur-2xl shadow-2xl transition-all duration-500 hover:bg-white/10 hover:-translate-y-2 group-hover:border-blue-400/30">
+                {/* Visual Glow behind number */}
+                <div className="absolute -top-10 -left-10 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                {/* Number Badge */}
+                <div className="relative mb-8 inline-flex">
+                  <div className="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-[#1AA9F4] to-[#004C92] flex items-center justify-center shadow-lg shadow-blue-500/20 transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6">
+                    <span className="text-white font-black text-2xl">
+                      {step.number}
+                    </span>
+                  </div>
+                </div>
+
+                <h4 className="text-2xl font-bold text-white mb-4 tracking-tight">
+                  {step.title}
+                </h4>
+
+                <p className="text-blue-100/60 leading-relaxed font-medium">
+                  {t.description || step.description}
+                </p>
               </div>
 
-              <h4 className="text-xl font-bold text-slate-900 mb-4">
-                {step.title}
-              </h4>
-
-              <p className="text-slate-500 leading-relaxed text-sm lg:text-base">
-                {step.description}
-              </p>
+              {/* Mobile Animated Arrow */}
+              {index !== steps.length - 1 && (
+                <div className="md:hidden py-6 text-blue-400 animate-bounce">
+                  <svg
+                    className="w-8 h-8 rotate-90"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </div>
+              )}
             </div>
           ))}
         </div>
 
         {/* Bottom Callout */}
         <div className="mt-24 text-center">
-          <div className="inline-block p-1 rounded-full bg-slate-50 border border-slate-100">
-            <div className="flex items-center gap-3 px-4 py-2">
-              <span className="flex h-2 w-2 rounded-full bg-green-500"></span>
-              <span className="text-sm font-semibold text-slate-600">
-                {t.how_bottom_text}
-              </span>
-            </div>
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-md shadow-xl">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+            </span>
+            <span className="text-sm md:text-base font-bold text-blue-100 tracking-tight">
+              {t.how_bottom_text}
+            </span>
           </div>
         </div>
       </div>
