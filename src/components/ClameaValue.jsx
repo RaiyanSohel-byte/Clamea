@@ -8,15 +8,14 @@ const ClameaValue = () => {
     tidigare: {
       title: "Tidigare",
       items: [
-        "Oklart vilka ersättningar du kan ha rätt till",
+        "Oklart vilka ersättningar du har rätt till", // Updated & Top
         "Svårt att förstå försäkringsvillkoren",
-        "Dokument spridda på flera ställen",
       ],
     },
     medClamea: {
       title: "Med Clamea",
       items: [
-        "Full överblick i appen – i realtid",
+        "Tydlig bild av vilka ersättningar du kan ha rätt till", // Updated & Top
         "Dokument samlade och organiserade",
         "Tydlig vägledning och påminnelser",
       ],
@@ -34,7 +33,7 @@ const ClameaValue = () => {
       ></div>
 
       <div className="container mx-auto max-w-7xl px-6 relative z-10">
-        {/* Header – Minimal & Direct (inspired by GetSafe's bold, confident headline style) */}
+        {/* Header */}
         <div className="text-center md:text-left mb-16 md:mb-32 max-w-3xl mx-auto md:mx-0">
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-6 leading-[1.1]">
             {content.headline}
@@ -44,10 +43,10 @@ const ClameaValue = () => {
           </p>
         </div>
 
-        {/* Comparison Grid – Asymmetric, problem side subtle, solution side prominent with app visual */}
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-20 items-start">
-          {/* LEFT: Tidigare – Subtle, dimmed, negative indicators (inspired by common "old way" contrasts but kept minimal) */}
-          <div className="lg:col-span-2 space-y-8 opacity-70">
+        {/* Comparison Grid */}
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-20 items-center">
+          {/* LEFT: Tidigare – Subtle separation, visually "weaker" */}
+          <div className="lg:col-span-2 space-y-8 opacity-60 border border-white/10 bg-white/5 p-6 rounded-2xl">
             <h3 className="text-sm uppercase tracking-widest font-bold text-blue-100">
               {content.tidigare.title}
             </h3>
@@ -55,7 +54,7 @@ const ClameaValue = () => {
               {content.tidigare.items.map((item, idx) => (
                 <li key={idx} className="flex gap-4 items-start">
                   <svg
-                    className="w-6 h-6 mt-0.5 flex-shrink-0 text-red-300"
+                    className="w-5 h-5 mt-1 flex-shrink-0 text-red-200"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -67,7 +66,7 @@ const ClameaValue = () => {
                       d="M6 18L18 6M6 6l12 12"
                     />
                   </svg>
-                  <span className="text-lg md:text-xl font-medium text-blue-50 leading-tight">
+                  <span className="text-lg font-medium text-blue-50 leading-tight">
                     {item}
                   </span>
                 </li>
@@ -75,9 +74,9 @@ const ClameaValue = () => {
             </ul>
           </div>
 
-          {/* RIGHT: Med Clamea – Prominent white card with bold benefits + app screenshot (key GetSafe inspiration: heavy use of clean app visuals) */}
+          {/* RIGHT: Med Clamea – Bold, prominent card style */}
           <div className="lg:col-span-3">
-            <div className="bg-white rounded-[3rem] p-10 md:p-16 shadow-[0_32px_80px_-20px_rgba(0,0,0,0.25)] transform transition-all duration-500 hover:scale-[1.02]">
+            <div className="bg-white rounded-[3rem] p-10 md:p-16 shadow-[0_32px_80px_-20px_rgba(0,0,0,0.25)]">
               <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-blue-50 border border-blue-100 mb-12">
                 <span className="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse"></span>
                 <span className="text-sm font-black uppercase tracking-widest text-blue-600">
@@ -85,8 +84,7 @@ const ClameaValue = () => {
                 </span>
               </div>
 
-              <div className="grid grid-cols-1  gap-12 lg:gap-16 items-center">
-                {/* Benefits list – Larger, bolder text for impact */}
+              <div className="grid grid-cols-1 gap-12 lg:gap-16 items-center">
                 <ul className="space-y-10">
                   {content.medClamea.items.map((item, idx) => (
                     <li key={idx} className="flex gap-6 items-center">
@@ -105,7 +103,7 @@ const ClameaValue = () => {
                           />
                         </svg>
                       </div>
-                      <span className="text-base md:text-3xl font-black text-[#004C92] tracking-tight leading-tight">
+                      <span className="text-xl md:text-3xl font-black text-[#004C92] tracking-tight leading-tight">
                         {item}
                       </span>
                     </li>

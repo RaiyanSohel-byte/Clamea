@@ -22,8 +22,9 @@ const TrustSecurity = () => {
       ),
     },
     {
-      title: "Centraliserat Skydd",
-      text: "Dina dokument är krypterade och samlade på en säker digital plats.",
+      // Card 2 updated to focus on Login/Access
+      title: "Säker inloggning",
+      text: "Endast du har tillgång till ditt konto. Inloggning och åtkomst är skyddade för att förhindra obehörig användning.",
       icon: (
         <svg
           fill="none"
@@ -41,8 +42,9 @@ const TrustSecurity = () => {
       ),
     },
     {
-      title: "Säker Lagring",
-      text: "Vi använder bank-nivå kryptering för att begränsa obehörig åtkomst.",
+      // Card 3 updated to focus purely on Storage/Encryption
+      title: "Krypterad lagring",
+      text: "Din information lagras krypterat med banknivå-säkerhet för att skydda data mot obehörig åtkomst.",
       icon: (
         <svg
           fill="none"
@@ -63,7 +65,7 @@ const TrustSecurity = () => {
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-[#004C92] to-[#1AA9F4] py-24 md:py-32">
-      {/* Decorative Background Element for 'Premium' feel */}
+      {/* Decorative Background Element */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-white/10 rounded-full blur-[120px]" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-400/20 rounded-full blur-[120px]" />
@@ -78,9 +80,13 @@ const TrustSecurity = () => {
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight">
             Trygg hantering av <br className="hidden md:block" /> ditt ärende
           </h2>
-          <p className="text-xl text-blue-50/80 max-w-2xl mx-auto leading-relaxed font-light">
-            Vi kombinerar avancerad teknik med juridisk expertis för att
-            säkerställa att din data alltid är i trygga händer.
+
+          {/* Headline Body – Updated exactly as requested */}
+          <p className="text-xl text-blue-50/80 max-w-3xl mx-auto leading-relaxed font-medium">
+            Vi använder avancerad teknik och strukturerad analys för att hjälpa
+            dig förstå ditt försäkringsärende och vilka ersättningar du kan ha
+            rätt till. Din data hanteras säkert och med högsta respekt för
+            integritet.
           </p>
         </div>
 
@@ -91,11 +97,6 @@ const TrustSecurity = () => {
               key={index}
               className="group relative bg-white/[0.03] backdrop-blur-md rounded-3xl p-10 border border-white/10 shadow-2xl transition-all duration-500 hover:bg-white/[0.07] hover:border-white/20 hover:-translate-y-2"
             >
-              {/* Icon Container */}
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-white/20 to-white/5 text-white mb-8 shadow-inner ring-1 ring-white/20 transition-transform duration-500 group-hover:scale-110">
-                {feature.icon}
-              </div>
-
               {/* Text Content */}
               <h3 className="text-white text-xl font-bold mb-4">
                 {feature.title}

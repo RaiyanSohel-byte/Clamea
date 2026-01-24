@@ -1,5 +1,5 @@
 import React from "react";
-import aiImg from "../assets/aichat.png";
+import aiImg from "../assets/Media (1).jpg";
 
 const AISection = () => {
   return (
