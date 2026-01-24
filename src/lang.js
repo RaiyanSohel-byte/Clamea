@@ -1,3 +1,5 @@
+import hero from "daisyui/components/hero";
+
 // src/lang.js
 export const texts = {
   en: {
@@ -6,18 +8,19 @@ export const texts = {
     how: "How it works",
     security: "Security",
     login: "Log in",
-    demo: "Request Demo",
+    demo: "Download app",
 
     // HERO
     hero_badge: "Early Access • Sweden",
     hero_badge2: "AI-analysis",
     hero_badge_text1: "Your policy covers",
     hero_badge_text2: "of rehabilitation costs",
-    hero_title_1: "Insurance claims",
-    hero_title_2: "made effortless.",
-    hero_desc:
-      "Clamea uses AI to handle the complexity of your insurance process. We track your case, organize documents, and ensure you get every krona you're entitled to.",
-    hero_cta_1: "Get Started",
+    hero_title_1: "Insurance matters –",
+    hero_title_2: " without hassle",
+    hero_desc: "Clamea uses AI to guide you through your insurance case.",
+    hero_desc2:
+      "You get structured documents, clear steps and support to understand what compensation you may be entitled to.",
+    hero_cta_1: "Download App",
     hero_cta_2: "See How It Works",
     hero_trusted: "Trusted by 2,000+ users",
 
@@ -108,7 +111,7 @@ export const texts = {
     how: "Så fungerar det",
     security: "Säkerhet",
     login: "Logga in",
-    demo: "Boka demo",
+    demo: "Ladda ner appen",
 
     // HERO
     hero_badge: "Tidigt tillträde • Sverige",
@@ -117,10 +120,12 @@ export const texts = {
       "Din försäkring täcker 100 % av rehabiliteringskostnaderna",
     hero_badge_text2: "av rehabiliteringskostnaderna",
     hero_title_1: "Försäkringsärenden",
-    hero_title_2: "utan krångel.",
+    hero_title_2: "- utan krångel",
     hero_desc:
-      "Clamea använder AI för att hantera komplexiteten i din försäkringsprocess. Vi följer ditt ärende, organiserar dokument och ser till att du får varje krona du har rätt till.",
-    hero_cta_1: "Kom igång",
+      "Clamea använder AI för att guida dig genom ditt försäkringsärende.",
+    hero_desc2:
+      "Du får struktur på dokument, tydliga steg och stöd för att förstå vilken ersättning du kan ha rätt till.",
+    hero_cta_1: "Ladda ner appen",
     hero_cta_2: "Se hur det fungerar",
     hero_trusted: "Betrodd av 2 000+ användare",
 

@@ -12,3 +12,12 @@
 body {
   font-family: "Nunito", sans-serif;
 }
+.ubuntu {
+  font-family: "Ubuntu", sans-serif;
+}
+.title {
+  @apply text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-6 leading-[1.1];
+}
+html {
+  scroll-behavior: smooth;
+}

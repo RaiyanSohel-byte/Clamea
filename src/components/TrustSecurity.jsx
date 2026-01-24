@@ -1,115 +1,127 @@
 import React from "react";
-import { texts } from "../lang";
 
-const TrustSecurity = ({ lang }) => {
-  const t = texts[lang];
-
-  const trustItems = [
+const TrustSecurity = () => {
+  const securityFeatures = [
     {
-      label: t.trust_gdpr,
-      sub: "Data Protection",
+      title: "GDPR-Säkerhet",
+      text: "Hantering av personuppgifter sker strikt enligt gällande lagstiftning.",
       icon: (
-        <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        <svg
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          className="w-7 h-7"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+          />
+        </svg>
       ),
     },
     {
-      label: t.trust_bankid,
-      sub: "Verified Identity",
+      title: "Centraliserat Skydd",
+      text: "Dina dokument är krypterade och samlade på en säker digital plats.",
       icon: (
-        <path d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A10.003 10.003 0 0012 3V1m0 10V3m0 8h8m-8 0a8.001 8.001 0 01-8 8" />
+        <svg
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          className="w-7 h-7"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"
+          />
+        </svg>
       ),
     },
     {
-      label: t.trust_aes,
-      sub: "Military-Grade",
+      title: "Säker Lagring",
+      text: "Vi använder bank-nivå kryptering för att begränsa obehörig åtkomst.",
       icon: (
-        <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+        <svg
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          className="w-7 h-7"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={1.5}
+            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+          />
+        </svg>
       ),
     },
   ];
 
   return (
-    <section className="relative py-24 overflow-hidden">
-      {/* THEME MATCHING:
-        1. We start with #1AA9F4 to seamlessly blend with the previous section.
-        2. We gradient down to #003366 (Deep Navy) to create a 'grounded' feel for security.
-      */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#1AA9F4] to-[#003366] z-0"></div>
+    <section className="relative overflow-hidden bg-gradient-to-b from-[#004C92] to-[#1AA9F4] py-24 md:py-32">
+      {/* Decorative Background Element for 'Premium' feel */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-white/10 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-400/20 rounded-full blur-[120px]" />
+      </div>
 
-      {/* Decorative 'Security Grid' Texture */}
-      <div
-        className="absolute inset-0 opacity-[0.05] z-0 pointer-events-none"
-        style={{
-          backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
-          backgroundSize: "40px 40px",
-        }}
-      ></div>
-
-      {/* Central Glow (The "Core" of security) */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-blue-400/20 rounded-full blur-[100px] z-0"></div>
-
-      <div className="container mx-auto max-w-6xl px-6 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center justify-center p-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 mb-6">
-            <div className="px-4 py-1 rounded-full bg-white/20">
-              <span className="text-[10px] font-black tracking-[0.2em] text-white uppercase">
-                {t.trust_badge || "SECURITY"}
-              </span>
-            </div>
-          </div>
-
-          <h3 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
-            {t.trust_title}
-          </h3>
+      <div className="container relative z-10 mx-auto px-6 max-w-6xl">
+        {/* Header */}
+        <div className="text-center mb-20">
+          <span className="inline-block py-1 px-3 mb-4 text-xs font-bold tracking-widest text-blue-200 uppercase bg-blue-900/30 border border-blue-400/30 rounded-full">
+            Säkerhet först
+          </span>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6 tracking-tight leading-tight">
+            Trygg hantering av <br className="hidden md:block" /> ditt ärende
+          </h2>
+          <p className="text-xl text-blue-50/80 max-w-2xl mx-auto leading-relaxed font-light">
+            Vi kombinerar avancerad teknik med juridisk expertis för att
+            säkerställa att din data alltid är i trygga händer.
+          </p>
         </div>
 
-        {/* Trust Cards - Redesigned to look like 'Secure Plates' */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {trustItems.map((item, idx) => (
+        {/* Cards Grid */}
+        <div className="grid md:grid-cols-3 gap-8">
+          {securityFeatures.map((feature, index) => (
             <div
-              key={idx}
-              className="group relative flex flex-col items-center p-8 rounded-[2rem] bg-gradient-to-br from-white/10 to-white/5 border border-white/10 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.3)] hover:border-white/30"
+              key={index}
+              className="group relative bg-white/[0.03] backdrop-blur-md rounded-3xl p-10 border border-white/10 shadow-2xl transition-all duration-500 hover:bg-white/[0.07] hover:border-white/20 hover:-translate-y-2"
             >
-              {/* Hover Glow Effect */}
-              <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-              {/* Icon Circle */}
-              <div className="relative w-16 h-16 mb-6 rounded-2xl bg-[#002855] flex items-center justify-center shadow-lg border border-white/10 group-hover:scale-110 group-hover:border-blue-300/50 transition-all duration-500">
-                <div className="text-blue-200 group-hover:text-white transition-colors duration-300">
-                  <svg
-                    className="w-8 h-8"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={1.5}
-                  >
-                    {item.icon}
-                  </svg>
-                </div>
+              {/* Icon Container */}
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-white/20 to-white/5 text-white mb-8 shadow-inner ring-1 ring-white/20 transition-transform duration-500 group-hover:scale-110">
+                {feature.icon}
               </div>
 
-              {/* Text */}
-              <div className="text-center relative z-10">
-                <h4 className="text-xl font-bold text-white mb-1 group-hover:text-blue-100 transition-colors">
-                  {item.label}
-                </h4>
-                <p className="text-xs font-bold text-blue-200/50 uppercase tracking-widest">
-                  {item.sub}
-                </p>
-              </div>
+              {/* Text Content */}
+              <h3 className="text-white text-xl font-bold mb-4">
+                {feature.title}
+              </h3>
+              <p className="text-blue-100/70 font-normal leading-relaxed">
+                {feature.text}
+              </p>
+
+              {/* Subtle accent line on hover */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-1 bg-blue-300 rounded-full transition-all duration-500 group-hover:w-1/3 opacity-50" />
             </div>
           ))}
         </div>
 
-        {/* Bottom Disclaimer with a "Lock" vibe */}
-        <div className="mt-16 flex justify-center">
-          <div className="flex items-center gap-4 px-6 py-4 rounded-2xl bg-[#002855]/40 border border-white/5 backdrop-blur-sm">
-            <div className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.6)] animate-pulse"></div>
-            <p className="text-xs md:text-sm text-blue-100/80 font-medium">
-              {t.trust_disclaimer}
-            </p>
-          </div>
+        {/* Trust Footer */}
+        <div className="mt-20 text-center">
+          <p className="text-sm text-blue-200/50 flex items-center justify-center gap-2">
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path
+                fillRule="evenodd"
+                d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                clipRule="evenodd"
+              />
+            </svg>
+            End-to-end kryptering aktiverad för alla användare
+          </p>
         </div>
       </div>
     </section>

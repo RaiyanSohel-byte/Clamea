@@ -4,8 +4,11 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import HowItWorks from "./components/HowItWorks";
 import Navbar from "./components/Navbar";
-import ProblemSolution from "./components/ProblemSolution";
+import ProblemSolution from "./components/ClameaValue";
 import TrustSecurity from "./components/TrustSecurity";
+import ClameaValue from "./components/ClameaValue";
+import ProcessSection from "./components/ProcessSection";
+import AISection from "./components/AISection";
 
 const App = () => {
   const getLang = () =>
@@ -23,9 +26,10 @@ const App = () => {
       <Navbar lang={lang} setLang={setLang} />
       <main>
         <Hero lang={lang} />
-        <ProblemSolution lang={lang} />
-        <Features lang={lang} />
-        <HowItWorks lang={lang} />
+        <ClameaValue />
+        <Features />
+        <ProcessSection />
+        <AISection />
         <TrustSecurity lang={lang} />
       </main>
       <Footer lang={lang} />
