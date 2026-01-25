@@ -1,6 +1,5 @@
 import React from "react";
-import aiImg from "../assets/Media (1).jpg";
-
+import aiImg from "../assets/aiChat.jpg";
 const AISection = () => {
   return (
     <section className="bg-gradient-to-b from-[#004C92] to-[#1AA9F4] py-24 md:py-32 overflow-hidden">

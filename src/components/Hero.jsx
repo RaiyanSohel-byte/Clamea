@@ -38,9 +38,10 @@ const Hero = ({ lang }) => {
             </div>
             {/* Responsive Heading: text-4xl on mobile, text-7xl+ on desktop */}
             <h1 className="text-4xl sm:text-6xl font-black tracking-tight leading-[1.1] lg:leading-[0.95] mb-6 md:mb-8">
-              Försäkringsärenden <br />
+              Trygg vägledning vid
+              <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-100 to-white opacity-90">
-                - utan krångel
+                skador och ersättning
               </span>
             </h1>
             <p className="text-xs md:text-lg lg:text-xl text-blue-50/80 mb-8 md:mb-12 leading-relaxed max-w-xl font-medium ">
